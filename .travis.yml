@@ -11,6 +11,9 @@ matrix:
     - os: osx
       language: generic
       env: PYTHON_VER=3.7
+    - os: osx
+      language: generic
+      env: PYTHON_VER=3.8
 
 
     - os: linux
@@ -19,6 +22,9 @@ matrix:
     - os: linux
       language: generic
       env: PYTHON_VER=3.7
+    - os: linux
+      language: generic
+      env: PYTHON_VER=3.8
 
 
 before_install:
@@ -28,7 +34,7 @@ before_install:
   - ulimit -a
 
     # Install the Python environment
-  - source devtools/travis-ci/before_install.sh
+  - source devtools/legacy-miniconda-setup/before_install.sh
   - python -V
 
 install:
