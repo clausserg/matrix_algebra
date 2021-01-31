@@ -7,6 +7,7 @@ Unit and regression test for the matrix_algebra package.
 from matrix_algebra.matrix_operations.mat_add import *
 from matrix_algebra.matrix_operations.mat_diff import *
 from matrix_algebra.matrix_operations.mat_mul import *
+from matrix_algebra.matrix_operations.mat_det import *
 
 
 def test_mat_add():
@@ -43,4 +44,26 @@ def test_mat_mul():
     calculated_mul = mat_mul(mat_1, mat_2)
 
     assert calculated_mul == expected_mul
+
+
+def test_det_tt():
+    """Test that the det_tt() function returns correctly"""
+
+    my_mat = [[1, 2], [3, 4]]
+
+    expected_det = -2
+    calculated_det = det_tt(my_mat)
+
+    assert calculated_det == expected_det
+
+
+def test_sub_mat():
+    """Test that the sub_mat() function returns correctly"""
+
+    my_mat = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+    expected_mat = [[1, 2], [4, 5]]
+    calculated_mat = sub_mat(my_mat, 2, 2)
+
+    assert calculated_mat == expected_mat
 

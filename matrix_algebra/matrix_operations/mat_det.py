@@ -18,7 +18,7 @@ def det_tt(my_mat):
     return my_mat[0][0] * my_mat[1][1] - my_mat[0][1] * my_mat[1][0]
 
 
-def sub_matrix(my_mat, my_row, my_col):
+def sub_mat(my_mat, my_row, my_col):
     """
     This function returns a sub-matrix of 'my_mat' resulting from the
     elimination of the 'my_row' and 'my_col' elements.
@@ -29,5 +29,8 @@ def sub_matrix(my_mat, my_row, my_col):
     :return: a python list of lists
     """
 
-    pass
+    trash_row = my_mat.pop(my_row)  # remove the my_row first
+    trash_col = [col.pop(my_col) for col in my_mat]  # remove the column
+
+    return my_mat
 
