@@ -5,6 +5,8 @@ A module performing basic and complex matrix algebra, created while practicing U
 
 # Add imports here
 from .matrix_algebra import *
+for matrix_algebra.matrix_operations import *
+from .input_output import *
 
 # Handle versioneer
 from ._version import get_versions
