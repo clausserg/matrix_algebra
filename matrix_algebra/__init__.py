@@ -4,7 +4,7 @@ A module performing basic and complex matrix algebra, created while practicing U
 """
 
 # Add imports here
-from .matrix_algebra import *
+
 
 # Handle versioneer
 from ._version import get_versions
