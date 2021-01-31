@@ -1,0 +1,46 @@
+"""
+Unit and regression test for the matrix_algebra package.
+"""
+
+
+# Import package, test suite, and other packages as needed
+from matrix_algebra.matrix_operations.mat_add import *
+from matrix_algebra.matrix_operations.mat_diff import *
+from matrix_algebra.matrix_operations.mat_mul import *
+
+
+def test_mat_add():
+    """Test that the mat_add() function returns correctly"""
+
+    mat_1 = [[1, 2], [3, 4]]
+    mat_2 = [[1, 2], [3, 4]]
+
+    expected_sum = [[2, 4], [6, 8]]
+    calculated_sum = mat_add(mat_1, mat_2)
+
+    assert calculated_sum == expected_sum
+
+
+def test_mat_diff():
+    """Test that the mat_diff() function returns correctly"""
+
+    mat_1 = [[1, 2], [3, 4]]
+    mat_2 = [[1, 2], [3, 4]]
+
+    expected_diff = [[0, 0], [0, 0]]
+    calculated_diff = mat_diff(mat_1, mat_2)
+
+    assert calculated_diff == expected_diff
+
+
+def test_mat_mul():
+    """Test that the mat_mul() function returns correctly"""
+
+    mat_1 = [[1, 2], [3, 4]]
+    mat_2 = [[1, 2], [3, 4]]
+
+    expected_mul = [[7, 10], [15, 22]]
+    calculated_mul = mat_mul(mat_1, mat_2)
+
+    assert calculated_mul == expected_mul
+
