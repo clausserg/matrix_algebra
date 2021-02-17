@@ -67,6 +67,14 @@ def mat_det(in_mat):
     :param in_mat: list of lists, i.e. a matrix
     :return: float or int, matrix determinant
     """
+    
+    # check if operation can be done
+    if len(in_mat) == len(in_mat[0]):  # this is not a square matrix
+        print("The matrix determinant is:")
+        pass
+    else:
+        return "You cannot calculate the determinant of this matrix!\n" \
+               "The matrix must be a square matrix!\n"
 
     # define some miscellaneous
     factors = {}  # dictionary with iteration count as key and list of factors as values
@@ -93,3 +101,4 @@ def mat_det(in_mat):
             # carry out the product with next layer
             my_det = [x[0] * x[1] for x in zip(my_det, factors[str(layer)])]
     return sum(my_det)
+
