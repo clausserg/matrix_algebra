@@ -56,3 +56,47 @@ def test_sub_mat():
 
     assert calculated_mat == expected_mat
 
+
+def test_get_mat():
+    """Test that the get_mat() function returns correctly"""
+
+    my_mat = [[[1, 2, 3], [4, 5, 6], [7, 8, 9]]]
+
+    expected_facts = [1, -2, 3]
+    expected_mats = [[[5, 6], [8, 9]], [[4, 6], [7, 9]], [[4, 5], [7, 8]]]
+    calculated_facts, calculated_mats = get_mat(my_mat)
+
+    assert calculated_mats == expected_mats and calculated_facts == expected_facts
+
+
+def test_mat_det():
+    """Test that the mat_det() function returns correctly"""
+
+    my_mat = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+    expected_det = 0
+    calculated_det = mat_det(my_mat)
+
+    assert calculated_det == expected_det
+
+
+def test_fail1_mat_det():
+    """Test that the mat_det() function fails correctly"""
+
+    my_mat = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+    expected_det = -23
+    calculated_det = mat_det(my_mat)
+
+    assert calculated_det != expected_det
+
+
+def test_fail2_mat_det():
+    """Test that the mat_det() function fails correctly"""
+
+    my_mat = [[1, 2, 3], [4, 5, 6]]
+
+    expected_det = 0
+    calculated_det = mat_det(my_mat)
+
+    assert calculated_det != expected_det
