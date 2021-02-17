@@ -46,17 +46,6 @@ def test_mat_mul():
     assert calculated_mul == expected_mul
 
 
-def test_det_tt():
-    """Test that the det_tt() function returns correctly"""
-
-    my_mat = [[1, 2], [3, 4]]
-
-    expected_det = -2
-    calculated_det = det_tt(my_mat)
-
-    assert calculated_det == expected_det
-
-
 def test_sub_mat():
     """Test that the sub_mat() function returns correctly"""
 
