@@ -19,7 +19,7 @@ if __name__ == '__main__':
         '1': 'matrix addition',
         '2': 'matrix subtraction',
         '3': 'matrix multiplication',
-        '4': 'matrix determinant'
+        '4': 'matrix determinant (Leibniz formalism)'
     }
 
     # flag to break out of the while loop
@@ -57,4 +57,3 @@ if __name__ == '__main__':
             det = mat_det(a_mat)
             print(det)
             operating = False
-
