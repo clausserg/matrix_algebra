@@ -14,6 +14,19 @@ def mat_lu(in_mat):
     # initialize wiht zeroes the L and U matrices
     upper_mat = [[0.0 for idx in range(len(in_mat))] for idx in range(len(in_mat))]
     lower_mat = [[0.0 for idx in range(len(in_mat))] for idx in range(len(in_mat))]
+    # initialize a container for the determinant
+    my_det = 1
+
+    # check if the input matrix contains a 0 on the first row first column.
+    # if true, swap the row with another row that does not contain a 0 element.
+    if in_mat[0][0] == 0:
+        for idx in range(1, len(in_mat)):
+            if in_mat[idx][0] != 0:
+                in_mat[0], in_mat[idx] = in_mat[idx], in_mat[0]  # swap the rows
+                my_det *= -1  # multiply the determiannt by -1 because we swaped two rows
+            break
+    else:
+        pass
 
     # we work on building the upper matrix meanwhile updating the lower matrix
     # zero the first column w.r.t. first row
