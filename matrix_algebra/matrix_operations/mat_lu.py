@@ -92,3 +92,10 @@ def mat_lu(in_mat):
 
     # return the upper and lower triangular matrices
     return upper_mat, lower_mat, my_det
+
+
+my_mat = [[3, 6, 3], [8, 2, 1], [5, 3, 2]]
+a, b, c = mat_lu(my_mat)
+
+print(a)
+print(b)
