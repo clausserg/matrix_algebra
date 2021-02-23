@@ -1,6 +1,6 @@
 """
 matrix_algebra
-A module performing basic and complex matrix algebra, created while practicing Udemy courses
+A module performing basic and complex matrix algebra without using NumPy or SciPy. Coded for fun while practicing Udemy courses
 """
 import sys
 from setuptools import setup, find_packages
