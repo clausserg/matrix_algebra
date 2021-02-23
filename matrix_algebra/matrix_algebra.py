@@ -10,6 +10,7 @@ from matrix_operations.mat_add import *
 from matrix_operations.mat_diff import *
 from matrix_operations.mat_mul import *
 from matrix_operations.mat_det import *
+from matrix_operations.mat_lu import *
 from input_output.input_output import *
 
 
@@ -19,7 +20,8 @@ if __name__ == '__main__':
         '1': 'matrix addition',
         '2': 'matrix subtraction',
         '3': 'matrix multiplication',
-        '4': 'matrix determinant (Leibniz formalism)'
+        '4': 'matrix determinant (Leibniz formalism)',
+        '5': 'matrix determinant (LU factorization)'
     }
 
     # flag to break out of the while loop
@@ -37,8 +39,8 @@ if __name__ == '__main__':
             mat_out(a_mat)
             print("Matrix number 2 is:")
             mat_out(b_mat)
-        elif to_do in ['4']:
-            a_mat = get_mat(1)
+        elif to_do in ['4', '5']:
+            a_mat = get_mat(' ')
 
         # let's do the requested operation
         if to_do == '1':
@@ -55,5 +57,9 @@ if __name__ == '__main__':
             operating = False
         elif to_do == '4':
             det = mat_det(a_mat)
-            print(det)
+            print("The matrix determinant is {}!".format(det))
+            operating = False
+        elif to_do == '5':
+            det = mat_lu(a_mat)[2]
+            print("The matrix determinant is {}!".format(det))
             operating = False

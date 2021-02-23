@@ -61,7 +61,7 @@ def get_mat(nr_mat):
     """
 
     # tell user that he is about to set up a matrix
-    print("\nLet's setup matrix number {}".format(nr_mat))
+    print("\nLet's setup the matrix {}".format(nr_mat))
 
     # ask user the dimension of the matrix to be defined
     while True:
@@ -95,4 +95,3 @@ def get_mat(nr_mat):
                     print(error)
                     print("Please insert either 'int' or 'float':")
     return my_mat
-
