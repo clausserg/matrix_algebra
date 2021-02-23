@@ -5,7 +5,7 @@ matrix_algebra
 [![codecov](https://codecov.io/gh/clausserg/matrix_algebra/branch/main/graph/badge.svg)](https://codecov.io/gh/clausserg/matrix_algebra/branch/main)
 
 
-A module performing basic and complex matrix algebra, created while practicing Udemy courses.
+A module performing basic and complex matrix algebra without using NumPy or SciPy. Created for fun while practicing Udemy courses.
 
 
 ### Copyright
