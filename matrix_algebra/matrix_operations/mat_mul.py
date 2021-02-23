@@ -30,7 +30,7 @@ def mat_mul(mat_a, mat_b):
                "the number of rows in second matrix!\n"
 
     # sort of minimalist one-line solution
-    # first we transform second matrix to a tuple of tuples
+    # first we transform second matrix to a tuple of column tuples
     tuple_mat_b = tuple(zip(*mat_b))
 
     # now we use nested list comprehension with a return
