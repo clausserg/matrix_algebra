@@ -29,6 +29,17 @@ def mat_mul(mat_a, mat_b):
                "The number of columns in first matrix should equal " \
                "the number of rows in second matrix!\n"
 
+    # sort of minimalist one-line solution
+    # first we transform second matrix to a tuple of tuples
+    tuple_mat_b = tuple(zip(*mat_b))
+
+    # now we use nested list comprehension with a return
+    return [[ sum(el_a * el_b for el_a, el_b in zip(row_mat_a, col_mat_b)) \
+            for col_mat_b in tuple_mat_b] for row_mat_a in mat_a]
+
+    # hereafter is a solutin detailing the one-line solution presented above:
+
+    """
     # the number of rows in matrix mat_c equals the number of rows in mat_a
     # the number of columns in matrix mat_c equals the number of columns in mat_b
     mat_c_row = len(mat_a)
@@ -42,4 +53,4 @@ def mat_mul(mat_a, mat_b):
             for kdx in range(len(mat_a[0])):  # index going through columns/rows of mat_a/mat_b
                 mat_c[idx][jdx] += (mat_a[idx][kdx] * mat_b[kdx][jdx])
     return mat_c
-
+    """
