@@ -28,7 +28,7 @@ def row_operation(mat_in, rows, scalar, operation):
 
     :param rows: list, one or two row indexes
     :param scalar: int or float
-    :param operation: string
+    :param operation: char
     :return: list of lists, i.e. a matrix
     """
 
@@ -42,15 +42,8 @@ def row_operation(mat_in, rows, scalar, operation):
     elif len(rows) == 1 and operation == '*':
         new_mat[rows[0]] = [idx * scalar for idx in mat_in[rows[0]]]
         return new_mat
-    elif len(rows) == 1 and operation == '+':
-        new_mat[rows[0]] = [idx + scalar for idx in mat_in[rows[0]]]
-        return new_mat
-    elif len(rows) == 1 and operation == '-':
-        new_mat[rows[0]] = [idx - scalar for idx in mat_in[rows[0]]]
-        return new_mat
 
-    # alter a row by a scalar and add/subtract it to another row
-    # if two row indexes are given
+    # alter a row by a scalar and add/subtract it to/from another row if two row indexes are given
     if len(rows) == 2 and operation == "+":
         new_mat[rows[1]] = list(map(lambda x, y: scalar*x + y, mat_in[rows[1]], mat_in[rows[0]]))
         return new_mat
