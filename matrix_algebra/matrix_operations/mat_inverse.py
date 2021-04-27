@@ -6,8 +6,10 @@ This module finds the inverse of a matrix by the Gauss-Jordan method
 """
 
 from copy import deepcopy
-from mat_lu import swap_rows
-
+try:
+    from mat_lu import swap_rows
+except ImportError:
+    from matrix_operations.mat_lu import swap_rows
 
 def pivot(mat_in, idx):
     """

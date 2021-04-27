@@ -26,7 +26,10 @@ def mat_operations(operations):
     # ask user what operation to be done
     while True:
         op_idx = input("\nWhat do you want me to do?")
-        if op_idx in operations.keys():
+        if op_idx == "0":
+            print("I will quit now. See you later!")
+            break
+        elif op_idx in operations.keys():
             print("Alright, I will do a {} for you!".format(operations[op_idx]))
             break
         else:
