@@ -77,9 +77,9 @@ def mat_inv(in_mat):
             else:
                 in_mat = row_operation(in_mat, [col, row], (-1) * in_mat[row][col])
 
-    # return the final augmented matrix
-    return in_mat
-
+    # return the final inverse matrix
+    inverse = [[in_mat[row][col] for row in range(nr_rows)] for col in range(nr_cols+1, 2*nr_cols)]
+    return inverse
 
 # TESTING THE CODE
 my_mat = [[5, 2, 3, 5], [1, 9, 2, 6], [0, 2, 2, 2], [0, 2, 3, 4]]
