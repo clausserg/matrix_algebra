@@ -11,7 +11,9 @@ from mat_lu import swap_rows
 
 def pivot(mat_in, idx):
     """
-    This function creates pivot in a idx diagonal position of mat_in
+    This function transforms the elements in a row of matrix such as to create
+    a pivot, i.e. a unit matrix elemnt, in a specified index position along the
+    main diagonal.
 
     :param mat_in: list of lists, i.e. a matrix
     :param idx: int
@@ -40,18 +42,19 @@ def row_operation(mat_in, rows, scalar):
         new_mat[rows[0]] = [idx * scalar for idx in mat_in[rows[0]]]
     else:
         # alter a row by a scalar and add/subtract it to/from another row
+        # addition vs. substraction will be defined by the sign of the scalar
         new_mat[rows[1]] = list(map(lambda x, y: scalar*x + y, mat_in[rows[0]], mat_in[rows[1]]))
 
-    # return the altered matrix
+    # return matrix with the altered row(s)
     return new_mat
 
 
 def mat_inv(in_mat):
     """
-    This function returns the a matrix invers through elementary row operations
+    This function returns the a matrix inverse by Gauss-Jordan approach
 
     :param in_mat: list of lists i.e., a matrix
-    :return: list of lists, i.e. a matrix
+    :return: list of lists, i.e. a matrix inverse
     """
 
     # define miscellaneous
@@ -80,10 +83,3 @@ def mat_inv(in_mat):
     # return the final inverse matrix
     inverse = [[in_mat[row][col] for row in range(nr_rows)] for col in range(nr_cols+1, 2*nr_cols)]
     return inverse
-
-# TESTING THE CODE
-my_mat = [[5, 2, 3, 5], [1, 9, 2, 6], [0, 2, 2, 2], [0, 2, 3, 4]]
-
-
-for line in mat_inv(my_mat):
-    print(line)
